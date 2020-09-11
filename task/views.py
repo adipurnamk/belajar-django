@@ -10,6 +10,7 @@ def index(req):
 
     if form_input.is_valid():
       form_input.save()
+      return redirect(to='task')
 
   tasks = models.Task.objects.all()
   return render(req, 'task/index.html', {
