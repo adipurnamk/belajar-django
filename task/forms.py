@@ -5,4 +5,6 @@ from . import models
 class TaskForm(ModelForm):
   class Meta:
     model = models.Task
-    exclude = []
+    exclude = [
+      'done_at',
+    ]
