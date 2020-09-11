@@ -22,12 +22,20 @@
       <tr>
         <th>#</th>
         <th>Aktivitas</th>
+        <th>Status</th>
         <th>Actions</th>
       </tr>
       {% for d in data %}
       <tr>
         <td>{{d.id}}</td>
         <td>{{d.name}}</td>
+        <td>
+          {% if d.done_at %}
+            Done
+          {% else %}
+            Pending
+          {% endif %}
+        </td>
         <td>
           <a class="btn btn-sm btn-success" href="/{{d.id}}">Detail</a>
           <a class="btn btn-sm btn-warning" href="/{{d.id}}/edit">Edit</a>
